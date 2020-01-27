@@ -4,8 +4,8 @@ install_and_configure_git() {
     apk add git git-doc nano
     git config --system core.editor nano
 =======
-#   su vagrant -c "git config --global user.name \"Paolo Chierici (paolinux97)\""
-#   vagrant -c 'git config --global user.email pchieri97@gmail.com'
+    su vagrant -c "git config --global user.name \"Paolo Chierici (paolinux97)\""
+    vagrant -c 'git config --global user.email pchieri97@gmail.com'
 >>>>>>> 0d7220a5f151f35b26d9d195c78b7e49b36067cc
 }
 
