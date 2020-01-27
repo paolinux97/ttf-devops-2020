@@ -1,4 +1,4 @@
-# Esercizio 08
+# Esercizio 04
 Quando viene eseguito questo container, esso esegue l'applicazione nodejs ```/app/index.js```. Questa semplice applicazione stampa a video la scritta ```Hello from <message>``` dove message è una stringa fornita dall'esterno, se il message non viene passato dall'esterno viene utilizzato _hostname_ come message.
 Se viene passato un comando esterno, esso sovrascrive il comando predefinito, e quest'ultimo viene eseguito normalmente.
 
