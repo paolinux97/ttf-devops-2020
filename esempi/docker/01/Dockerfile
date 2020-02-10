@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add git nano openssh
+RUN apk add git
 RUN git clone https://github.com/iBOOD/idiotlin.git
 WORKDIR /idiotlin/mastersolution
 EXPOSE 8080
