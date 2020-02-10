@@ -1,17 +1,16 @@
-FROM alpine AS clone_repo
+FROM alpine AS clone-repo
 # clone repo
 RUN apk add git
 RUN git clone https://github.com/iBOOD/idiotlin.git
 
-FROM alpine AS build_java
+FROM gradle:jdk13 AS build-java
 # build java application
-COPY --from=clone_repo /idiotlin/mastersolution .
-RUN apk add openjdk11-jdk gradle
+COPY --from=clone-repo /idiotlin/mastersolution .
 RUN ./gradlew distTar
 
-FROM alpine
+FROM openjdk:13-jdk
 # extract binaries and execute it
 EXPOSE 8080
-COPY --from=build_java /idiotlin/mastersolution/build/distributions/mastersolution.tar .
+COPY --from=build-java /idiotlin/mastersolution/build/distributions/mastersolution.tar .
 RUN tar xvf /mastersolution.tar
-CMD /mastersolution/bin/mastersolution
+ENTRYPOINT [ "/mastersolution/bin/mastersolution" ]
