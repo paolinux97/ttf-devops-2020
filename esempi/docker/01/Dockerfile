@@ -11,6 +11,6 @@ RUN ./gradlew distTar
 FROM openjdk:13-jdk
 # extract binaries and execute it
 EXPOSE 8080
-COPY --from=build-java /idiotlin/mastersolution/build/distributions/mastersolution.tar .
-RUN tar xvf /mastersolution.tar
-ENTRYPOINT [ "/mastersolution/bin/mastersolution" ]
+COPY --from=build-java /home/gradle/build/distributions/gradle.tar .
+RUN tar xvf gradle.tar
+ENTRYPOINT [ "/gradle/bin/gradle" ]
