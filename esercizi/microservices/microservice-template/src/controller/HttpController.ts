@@ -13,4 +13,4 @@ class HttpController {
     }
 }
 
-export default HttpCcntroller;
+export default HttpController;

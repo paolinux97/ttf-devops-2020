@@ -6,7 +6,7 @@ const should = chai.should();
 
 //TODO
 describe('test suite description', () => {
-    testData.forEach((test: ColorModel) => {
+    testData.forEach((test) => {
         it(`test case description`, () => {
             convert(test.input).should.deep.equal(test.expected);
         });
